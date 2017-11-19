@@ -1,4 +1,0 @@
-services:
-    gocardless_enterprise.client:
-        class: GoCardless\Enterprise\Client
-        arguments: ["@guzzle.client", "%gocardless_enterprise%"]
