@@ -1,0 +1,39 @@
+Gocardless\EnterpriseBundle\Entity\Customer:
+    type: entity
+    table: gocardless_customer
+    id:
+        id:
+            type: string
+            length: 20
+    fields:
+        email:
+            type: string
+        given_name:
+            type: string
+        family_name:
+            type: string
+        organisation_name:
+            type: string
+            nullable: true
+        address_line1:
+            type: string
+        address_line2:
+            type: string
+            nullable: true
+        address_line3:
+            type: string
+            nullable: true
+        city:
+            type: string
+        region:
+            type: string
+            nullable: true
+        postal_code:
+            type: string
+        created_at:
+            type: datetime
+    oneToMany:
+        bankAccounts:
+            targetEntity: CustomerBankAccount
+            mappedBy: customer
+            cascade: ["persist"]

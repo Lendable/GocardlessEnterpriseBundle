@@ -1,0 +1,28 @@
+Gocardless\EnterpriseBundle\Entity\Payment:
+    type: entity
+    table: gocardless_payment
+    id:
+        id:
+            type: string
+            length: 20
+    fields:
+        amount:
+            type: integer
+        currency:
+            type: string
+        description:
+            type: string
+            nullable: true
+        charge_date:
+            type: string
+        metadata:
+            type: simple_array
+            nullable: true
+        status:
+            type: string
+        created_at:
+            type: datetime
+    manyToOne:
+        mandate:
+            targetEntity: Mandate
+            cascade: ["persist"]

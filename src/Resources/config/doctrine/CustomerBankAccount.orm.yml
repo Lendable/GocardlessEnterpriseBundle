@@ -1,0 +1,29 @@
+Gocardless\EnterpriseBundle\Entity\CustomerBankAccount:
+    type: entity
+    table: gocardless_customerbankaccount
+    id:
+        id:
+            type: string
+            length: 20
+    fields:
+        account_number:
+            type: string
+        branch_code:
+            type: string
+            nullable: true
+        country_code:
+            type: string
+        account_holder_name:
+            type: string
+        created_at:
+            type: datetime
+    oneToMany:
+        mandates:
+            targetEntity: Mandate
+            mappedBy: customerBankAccount
+            cascade: ["persist"]
+    manyToOne:
+        customer:
+            targetEntity: Customer
+            inversedBy: bankAccounts
+            cascade: ["persist"]

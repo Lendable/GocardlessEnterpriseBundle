@@ -1,19 +1,25 @@
 {
   "name": "lendable/gocardless-enterprise-bundle",
   "type": "symfony-bundle",
-  "description": "integration of gocardless enterprise library into symfony",
-  "keywords": [
-    "gocardless",
-    "Symfony2"
-  ],
-  "homepage": "https://github.com/Lendable/GocardlessEnterpriseBundle.git",
   "license": "MIT",
+  "description": "integration of gocardless enterprise library into symfony",
+  "keywords": ["gocardless", "symfony", "bundle", "lendable"],
   "authors": [
     {
-      "name": "The Lendable Team",
-      "email": "contact@lendable.co.uk"
+      "name": "Lendable Ltd",
+      "email": "dev@lendable.co.uk"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Gocardless\\EnterpriseBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Gocardless\\EnterpriseBundle\\Tests\\": "tests/"
+    }
+  },
   "repositories": [
     {
       "type": "vcs",
@@ -27,10 +33,10 @@
     "lendable/guzzle-bundle": "~2.0",
     "stof/doctrine-extensions-bundle": "*"
   },
-  "autoload": {
-    "psr-0": {
-      "Gocardless\\EnterpriseBundle": ""
-    }
-  },
-  "target-dir": "Gocardless/EnterpriseBundle"
+  "require-dev": {
+    "phpunit/phpunit": "^6.0",
+    "satooshi/php-coveralls": "^1.0",
+    "roave/security-advisories": "dev-master",
+    "jakub-onderka/php-parallel-lint": "^0.9.2"
+  }
 }
