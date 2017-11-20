@@ -44,6 +44,8 @@ before_install:
   - if [ $(phpenv version-name) != "nightly" ]; then phpenv config-rm xdebug.ini; fi;
   # Set composer minimum-stability configuration filter to beta versions
   - if [ "$DEPENDENCIES" = "beta" ]; then perl -pi -e 's/^}$/,"minimum-stability":"beta"}/' composer.json; fi;
+  # Test if we have a token for github as the project easily hits the 60 rph limit
+  - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
 
 install:
   - if [ "$deps" = "no" ]; then composer update; fi;
