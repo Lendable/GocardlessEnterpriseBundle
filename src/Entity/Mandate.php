@@ -72,6 +72,6 @@ class Mandate extends \GoCardless\Enterprise\Model\Mandate
 
     public function isActive()
     {
-        return !in_array($this->getStatus(), ["failed", "cancelled"]);
+        return !in_array($this->getStatus(), array("failed", "cancelled"));
     }
 }
