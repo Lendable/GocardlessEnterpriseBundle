@@ -50,8 +50,4 @@ install:
   - if [ "$deps" = "low" ]; then composer --prefer-lowest --prefer-stable update; fi;
 
 script:
-  - vendor/bin/phpunit -v --coverage-clover build/logs/clover.xml
   - vendor/jakub-onderka/php-parallel-lint/parallel-lint --exclude vendor .
-
-after_script:
-  - php vendor/bin/coveralls -v
