@@ -1,5 +1,10 @@
 services:
+
+    gocardless_enterprise_bundle.guzzle_client:
+        public: false
+        class: GuzzleHttp\Client
+
     gocardless_enterprise.client:
         public: true
         class: GoCardless\Enterprise\Client
-        arguments: ["@guzzle.client", "%gocardless_enterprise%"]
+        arguments: ["@gocardless_enterprise_bundle.guzzle_client", "%gocardless_enterprise%"]
