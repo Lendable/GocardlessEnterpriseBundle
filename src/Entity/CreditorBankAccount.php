@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Paul
- * Date: 13/11/2014
- * Time: 10:37.
- */
 
 namespace Gocardless\EnterpriseBundle\Entity;
 
