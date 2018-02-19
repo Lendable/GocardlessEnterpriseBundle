@@ -11,8 +11,13 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "Gocardless\\EnterpriseBundle": ""
+    "psr-4": {
+      "Gocardless\\EnterpriseBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Gocardless\\EnterpriseBundle\\Tests\\": "tests/"
     }
   },
   "repositories": [

@@ -9,4 +9,4 @@ services:
 
     gocardless_enterprise.guzzle_client:
         public: false
-        class: Guzzle\Http\Client
+        class: GuzzleHttp\Client
