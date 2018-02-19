@@ -28,7 +28,7 @@ class CustomerBankAccount extends \GoCardless\Enterprise\Model\CustomerBankAccou
         $this->mandates->removeElement($mandate);
     }
 
-    public function fromArray($data)
+    public function fromArray(array $data): void
     {
         parent::fromArray($data);
         if (array_key_exists('account_number_ending', $data) && !$this->getAccountNumber()) {

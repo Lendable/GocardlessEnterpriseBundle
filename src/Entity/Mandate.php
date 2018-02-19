@@ -2,8 +2,6 @@
 
 namespace Gocardless\EnterpriseBundle\Entity;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-
 class Mandate extends \GoCardless\Enterprise\Model\Mandate
 {
     /**
@@ -48,17 +46,17 @@ class Mandate extends \GoCardless\Enterprise\Model\Mandate
         return $this->pdfPath;
     }
 
-    public function toArray()
+    public function toArray(): array
     {
         $arr = parent::toArray();
-        if (array_key_exists("pdfPath", $arr)) {
-            unset($arr["pdfPath"]);
+        if (array_key_exists('pdfPath', $arr)) {
+            unset($arr['pdfPath']);
         }
 
         return $arr;
     }
 
-    public function fromArray($data)
+    public function fromArray(array $data): void
     {
         parent::fromArray($data);
         $this->setCreatedAt(new \DateTime($this->getCreatedAt()));
@@ -66,6 +64,6 @@ class Mandate extends \GoCardless\Enterprise\Model\Mandate
 
     public function isActive()
     {
-        return !in_array($this->getStatus(), array("failed", "cancelled"));
+        return !in_array($this->getStatus(), array('failed', 'cancelled'));
     }
 }

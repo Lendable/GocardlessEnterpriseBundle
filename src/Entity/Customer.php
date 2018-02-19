@@ -28,7 +28,7 @@ class Customer extends \GoCardless\Enterprise\Model\Customer
         $this->bankAccounts->removeElement($bankAccount);
     }
 
-    public function fromArray($data)
+    public function fromArray(array $data): void
     {
         parent::fromArray($data);
         $this->setCreatedAt(new \DateTime($this->getCreatedAt()));
