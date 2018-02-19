@@ -23,7 +23,7 @@
   ],
   "require": {
     "php": ">=5.3.2",
-    "gocardless/enterprise": "dev-develop#28bf9257a851a4bde120a5cb43a19b237a41a866",
+    "gocardless/enterprise": "dev-feature/php-guzzle-upgrade#059e4b2d21cacdf9635530dd42207a8d72cd6f62",
     "symfony/symfony": "~2.1|~3.0|~4.0",
     "guzzlehttp/guzzle": "~5.3",
     "stof/doctrine-extensions-bundle": "*"
