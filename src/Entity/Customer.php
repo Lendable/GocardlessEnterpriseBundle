@@ -8,7 +8,7 @@ class Customer extends \GoCardless\Enterprise\Model\Customer
 {
     public function __construct()
     {
-        $this->bankAccounts = new ArrayCollection();
+        $this->bank_accounts = new ArrayCollection();
     }
 
     /**
@@ -16,7 +16,7 @@ class Customer extends \GoCardless\Enterprise\Model\Customer
      */
     public function addBankAccount(CustomerBankAccount $bankAccount)
     {
-        $this->bankAccounts[] = $bankAccount;
+        $this->bank_accounts[] = $bankAccount;
         $bankAccount->setCustomer($this);
     }
 
@@ -25,7 +25,7 @@ class Customer extends \GoCardless\Enterprise\Model\Customer
      */
     public function removeBankAccount(CustomerBankAccount $bankAccount)
     {
-        $this->bankAccounts->removeElement($bankAccount);
+        $this->bank_accounts->removeElement($bankAccount);
     }
 
     public function fromArray(array $data): void
