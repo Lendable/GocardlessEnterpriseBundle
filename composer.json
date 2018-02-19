@@ -11,13 +11,8 @@
     }
   ],
   "autoload": {
-    "psr-4": {
-      "Gocardless\\EnterpriseBundle\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Gocardless\\EnterpriseBundle\\Tests\\": "tests/"
+    "psr-0": {
+      "Gocardless\\EnterpriseBundle": ""
     }
   },
   "repositories": [
@@ -28,7 +23,7 @@
   ],
   "require": {
     "php": ">=5.3.2",
-    "gocardless/enterprise": "dev-develop",
+    "gocardless/enterprise": "dev-develop#28bf9257a851a4bde120a5cb43a19b237a41a866",
     "symfony/symfony": "~2.1|~3.0|~4.0",
     "guzzlehttp/guzzle": "~5.3",
     "stof/doctrine-extensions-bundle": "*"
