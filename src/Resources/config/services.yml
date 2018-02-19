@@ -1,4 +1,5 @@
 services:
+
     gocardless_enterprise.client:
         public: true
         class: GoCardless\Enterprise\Client
@@ -8,4 +9,4 @@ services:
 
     gocardless_enterprise.guzzle_client:
         public: false
-        class: Guzzle\Http\Client
+        class: GuzzleHttp\Client

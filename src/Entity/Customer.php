@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Paul
- * Date: 13/11/2014
- * Time: 10:36.
- */
 
 namespace Gocardless\EnterpriseBundle\Entity;
 
@@ -34,7 +28,7 @@ class Customer extends \GoCardless\Enterprise\Model\Customer
         $this->bankAccounts->removeElement($bankAccount);
     }
 
-    public function fromArray($data)
+    public function fromArray(array $data): void
     {
         parent::fromArray($data);
         $this->setCreatedAt(new \DateTime($this->getCreatedAt()));
