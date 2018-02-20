@@ -28,7 +28,7 @@
   ],
   "require": {
     "php": ">=5.3.2",
-    "gocardless/enterprise": "dev-feature/guzzle#90843b1d5ee830e5edcae97bd6ad705e29fd3ac7",
+    "gocardless/enterprise": "dev-feature/guzzle#e2959dd91afd8858e3c589670501a3babe5e00c8",
     "symfony/symfony": "~2.1|~3.0|~4.0",
     "stof/doctrine-extensions-bundle": "*"
   },
