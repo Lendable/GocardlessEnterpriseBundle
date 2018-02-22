@@ -20,12 +20,6 @@
       "Gocardless\\EnterpriseBundle\\Tests\\": "tests/"
     }
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/Lendable/guzzle-bundle.git"
-    }
-  ],
   "require": {
     "php": ">=5.4",
     "gocardless/enterprise": "dev-feature/guzzle#e2959dd91afd8858e3c589670501a3babe5e00c8",
