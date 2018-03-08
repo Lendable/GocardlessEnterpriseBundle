@@ -24,17 +24,25 @@ matrix:
     - php: 7.1
       env: SYMFONY_VERSION=^3.0
     - php: 7.1
+      env: SYMFONY_VERSION=dev-master
+    - php: 7.1
       env: DEPENDENCIES=beta
     - php: 7.2
       env: SYMFONY_VERSION=^3.0
+    - php: 7.2
+      env: SYMFONY_VERSION=dev-master
     - php: 7.2
       env: DEPENDENCIES=beta
     - php: nightly
       env: SYMFONY_VERSION=^3.0
+    - php: nightly
+      env: SYMFONY_VERSION=dev-master
     - php: nightly
       env: DEPENDENCIES=beta
   allow_failures:
     - php: nightly
+    - env: SYMFONY_VERSION=dev-master
+    - env: DEPENDENCIES=beta
 
 env:
   global:
