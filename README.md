@@ -1,7 +1,9 @@
+[![Build Status](https://api.travis-ci.org/Lendable/GocardlessEnterpriseBundle.svg)](https://travis-ci.org/Lendable/GocardlessEnterpriseBundle)
+
 Gocardless Enterprise Bundle
 ============================
 
-Integration of the Gocardless enterprise library into Symfony2.
+Integration of the Gocardless enterprise library into Symfony.
 
 * Create a parameter called gocardless_enterprise with your gocardless configuration:
 ```
@@ -13,9 +15,8 @@ parameters:
         creditorId: XXXXXXXXXXXXXX
         token: XXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
-* Add MisdGuzzleBundle and GocardlessEnterpriseBundle to your AppKernel.php
+* Add GocardlessEnterpriseBundle to your AppKernel.php
 ```
-    new Misd\GuzzleBundle\MisdGuzzleBundle(),
     new Gocardless\EnterpriseBundle\GocardlessEnterpriseBundle(),
 ```            
 
