@@ -1,24 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Paul
- * Date: 13/11/2014
- * Time: 10:37.
- */
 
 namespace Gocardless\EnterpriseBundle\Entity;
-
-use Gedmo\Mapping\Annotation as Gedmo;
 
 class Mandate extends \GoCardless\Enterprise\Model\Mandate
 {
     /**
-     * @var \DateTime
+     * @var \DateTimeInterface
      */
     protected $updated;
 
     /**
-     * @return \DateTime
+     * @return \DateTimeInterface
      */
     public function getUpdated()
     {
@@ -26,9 +18,9 @@ class Mandate extends \GoCardless\Enterprise\Model\Mandate
     }
 
     /**
-     * @param \DateTime $updated
+     * @param \DateTimeInterface $updated
      */
-    public function setUpdated(\DateTime $updated)
+    public function setUpdated(\DateTimeInterface $updated)
     {
         $this->updated = $updated;
     }
@@ -57,8 +49,8 @@ class Mandate extends \GoCardless\Enterprise\Model\Mandate
     public function toArray()
     {
         $arr = parent::toArray();
-        if (array_key_exists("pdfPath", $arr)) {
-            unset($arr["pdfPath"]);
+        if (array_key_exists('pdfPath', $arr)) {
+            unset($arr['pdfPath']);
         }
 
         return $arr;
@@ -70,8 +62,11 @@ class Mandate extends \GoCardless\Enterprise\Model\Mandate
         $this->setCreatedAt(new \DateTime($this->getCreatedAt()));
     }
 
+    /**
+     * @return bool
+     */
     public function isActive()
     {
-        return !in_array($this->getStatus(), array("failed", "cancelled"));
+        return !in_array($this->getStatus(), ['failed', 'cancelled']);
     }
 }

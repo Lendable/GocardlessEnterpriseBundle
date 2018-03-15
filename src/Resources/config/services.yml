@@ -2,6 +2,7 @@ services:
     gocardless_enterprise.client:
         public: true
         class: GoCardless\Enterprise\Client
+        alias: GoCardless\Enterprise\Client
         arguments:
             - '@gocardless_enterprise.guzzle_client'
             - '%gocardless_enterprise%'
