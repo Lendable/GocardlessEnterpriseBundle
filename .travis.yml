@@ -54,8 +54,7 @@ before_install:
   - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
 
 install:
-  - if [ "$DEPENDENCIES" = "no" ]; then composer update; fi;
-  - if [ "$DEPENDENCIES" = "low" ]; then composer --prefer-lowest --prefer-stable update; fi;
+  - if [ "$DEPENDENCIES" = "low" ]; then composer --prefer-lowest --prefer-stable update; else composer update; fi;
 
 script:
   - composer validate-files
