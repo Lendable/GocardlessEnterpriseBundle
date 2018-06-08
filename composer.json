@@ -47,7 +47,7 @@
     "check-security": [
       "bin/security-checker security:check"
     ]
-  }
+  },
   
   "config": {
     "bin-dir": "bin",
