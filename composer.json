@@ -2,7 +2,7 @@
   "name": "lendable/gocardless-enterprise-bundle",
   "type": "symfony-bundle",
   "license": "MIT",
-  "description": "integration of gocardless enterprise library into symfony",
+  "description": "Integration of GoCardless enterprise library into Symfony",
   "keywords": ["gocardless", "symfony", "bundle", "lendable"],
   "authors": [
     {
@@ -10,33 +10,66 @@
       "email": "dev@lendable.co.uk"
     }
   ],
+  
   "autoload": {
     "psr-4": {
-      "Gocardless\\EnterpriseBundle\\": "src/"
+      "Lendable\\GoCardlessEnterpriseBundle\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Gocardless\\EnterpriseBundle\\Tests\\": "tests/"
+      "Lendable\\GoCardlessEnterpriseBundle\\Tests\\": "tests/"
     }
   },
+  
   "require": {
-    "php": ">=5.5",
-    "gocardless/enterprise": "^5.0",
-    "symfony/symfony": "~2.7|~3.0|~4.0",
-    "stof/doctrine-extensions-bundle": "*"
+    "php": "^7.0",
+    "gocardless/enterprise": "dev-master#10c27820a3874fa83d610724b84fb7eae60334a2",
+    "stof/doctrine-extensions-bundle": "*",
+    "symfony/symfony": "^2.8|^3.0|^4.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-master",
-    "jakub-onderka/php-parallel-lint": "^0.9.2",
-    "friendsofphp/php-cs-fixer": "^2.10"
+    "friendsofphp/php-cs-fixer": "*",
+    "jakub-onderka/php-parallel-lint": "^1.0",
+    "matthiasnoback/symfony-dependency-injection-test": "2.*",
+    "php-coveralls/php-coveralls": "^2.1",
+    "phpstan/phpstan": "^0.10.2",
+    "phpunit/phpunit": "^6.0",
+    "sensiolabs/security-checker": "^4.1",
+    "symfony/phpunit-bridge": "^2.8|^3.0|^4.0"
   },
+
   "scripts": {
-    "validate-files": [
-      "vendor/bin/parallel-lint --exclude vendor ."
+    "check-code-style": [
+      "bin/php-cs-fixer fix --config='./.php_cs' --show-progress=none --dry-run --no-interaction --diff -v"
     ],
-    "code-style": [
-      "vendor/bin/php-cs-fixer fix --config='./.php_cs' --show-progress=none --dry-run --no-interaction -v"
+    "check-security": [
+      "bin/security-checker security:check"
+    ],
+    "fix-code-style": [
+      "bin/php-cs-fixer fix --config='./.php_cs' --show-progress=none --no-interaction --diff -v"
+    ],
+    "run-static-analysis": [
+      "bin/phpstan analyse --level=1 src/"
+    ],
+    "run-static-analysis-including-tests": [
+      "@run-static-analysis",
+      "bin/phpstan analyse --level=1 tests/"
+    ],
+    "run-tests": [
+      "bin/phpunit"
+    ],
+    "run-tests-with-clover": [
+      "bin/phpunit --coverage-clover build/logs/clover.xml"
+    ],
+    "validate-files": [
+      "bin/parallel-lint --exclude vendor --exclude bin ."
     ]
-  }
+  },
+
+  "config": {
+    "bin-dir": "bin",
+    "sort-packages": true
+  },
+  "prefer-stable": true
 }

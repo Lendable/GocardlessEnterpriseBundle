@@ -1,15 +1,14 @@
 services:
-    gocardless_enterprise.client:
-        alias: GoCardless\Enterprise\Client
-        public: true
-        
-    GoCardless\Enterprise\Client:
+    Lendable\GoCardlessEnterprise\Client:
         public: false
-        class: GoCardless\Enterprise\Client
         arguments:
-            - '@gocardless_enterprise.guzzle_client'
-            - '%gocardless_enterprise%'
+            $client: '@gocardless_enterprise.guzzle_client'
+            $config: '%gocardless_enterprise%'
 
     gocardless_enterprise.guzzle_client:
         public: false
         class: GuzzleHttp\Client
+
+    gocardless_enterprise.client:
+        public: true
+        alias: Lendable\GoCardlessEnterprise\Client

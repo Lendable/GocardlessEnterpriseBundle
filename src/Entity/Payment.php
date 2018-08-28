@@ -1,8 +1,8 @@
 <?php
 
-namespace Gocardless\EnterpriseBundle\Entity;
+namespace Lendable\GoCardlessEnterpriseBundle\Entity;
 
-class Payment extends \GoCardless\Enterprise\Model\Payment
+class Payment extends \Lendable\GoCardlessEnterprise\Model\Payment
 {
     public function fromArray($data)
     {

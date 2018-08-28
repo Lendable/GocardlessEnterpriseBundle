@@ -1,10 +1,10 @@
 <?php
 
-namespace Gocardless\EnterpriseBundle\Entity;
+namespace Lendable\GoCardlessEnterpriseBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-class Customer extends \GoCardless\Enterprise\Model\Customer
+class Customer extends \Lendable\GoCardlessEnterprise\Model\Customer
 {
     public function __construct()
     {

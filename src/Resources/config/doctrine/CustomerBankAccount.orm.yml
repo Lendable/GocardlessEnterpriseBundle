@@ -1,4 +1,4 @@
-Gocardless\EnterpriseBundle\Entity\CustomerBankAccount:
+namespace Lendable\GoCardlessEnterpriseBundle\Entity\CustomerBankAccount:
     type: entity
     table: gocardless_customerbankaccount
     id:

@@ -1,11 +1,15 @@
-[![Build Status](https://api.travis-ci.org/Lendable/GocardlessEnterpriseBundle.svg)](https://travis-ci.org/Lendable/GocardlessEnterpriseBundle)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Lendable/GocardlessEnterpriseBundle/badges/quality-score.png)](https://scrutinizer-ci.com/g/Lendable/GocardlessEnterpriseBundle/?branch=master)
+[![Build Status](https://api.travis-ci.org/Lendable/GocardlessEnterpriseBundle.svg?branch=master)](https://www.travis-ci.org/Lendable/GocardlessEnterpriseBundle)
+[![Coverage Status](https://coveralls.io/repos/github/Lendable/GocardlessEnterpriseBundle/badge.svg?branch=master)](https://coveralls.io/github/Lendable/GocardlessEnterpriseBundle?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/lendable/gocardless-enterprise-bundle/version)](https://packagist.org/packages/lendable/gocardless-enterprise-bundle)
+[![Total Downloads](https://poser.pugx.org/lendable/gocardless-enterprise-bundle/downloads)](https://packagist.org/packages/lendable/gocardless-enterprise-bundle)
 
-Gocardless Enterprise Bundle
+GoCardless Enterprise Bundle
 ============================
 
-Integration of the Gocardless enterprise library into Symfony.
+Integration of the GoCardless Enterprise API into Symfony.
 
-* Create a parameter called gocardless_enterprise with your gocardless configuration:
+* Create a new parameter called `gocardless_enterprise` in your configuration:
 ```
 parameters:
     gocardless_enterprise:
@@ -15,15 +19,15 @@ parameters:
         creditorId: XXXXXXXXXXXXXX
         token: XXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
-* Add GocardlessEnterpriseBundle to your AppKernel.php
+* Add GoCardlessEnterpriseBundle to your AppKernel.php
 ```
-    new Gocardless\EnterpriseBundle\GocardlessEnterpriseBundle(),
+    new Lendable\GoCardlessEnterpriseBundle\GoCardlessEnterpriseBundle(),
 ```            
 
-You will then have a service available to you called gocardless_enterprise.client with methods for interacting with all API endpoints.
-This service includes a method for validating the signature of any webhooks received from GoCardless (assuming you configured the webhook_secret properly).
+You will then have a service available to you called `gocardless_enterprise.client` with methods for interacting with GoCardless Enterprise API endpoints.
+This service includes a method for validating the signature of any webhook received from GoCardless (assuming you configured the `webhook_secret` properly).
 
-The following Models will be mapped to your Database automatically:
+The following Models will be mapped to your database automatically:
 * Customer
 * CustomerBankAccount
 * Mandate

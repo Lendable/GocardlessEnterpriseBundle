@@ -1,8 +1,8 @@
 <?php
 
-namespace Gocardless\EnterpriseBundle\Entity;
+namespace Lendable\GoCardlessEnterpriseBundle\Entity;
 
-class Mandate extends \GoCardless\Enterprise\Model\Mandate
+class Mandate extends \Lendable\GoCardlessEnterprise\Model\Mandate
 {
     /**
      * @var \DateTimeInterface
