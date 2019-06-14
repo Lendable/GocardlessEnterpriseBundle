@@ -6,11 +6,10 @@
         convertWarningsToExceptions="true"
         stopOnFailure="false"
         bootstrap="vendor/autoload.php"
-        verbose="true"
-        syntaxCheck="true">
+        verbose="true">
 
     <testsuites>
-        <testsuite>
+        <testsuite name="Lendable's GoCardless Enterprise bundle test suite">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

@@ -7,7 +7,8 @@
   "authors": [
     {
       "name": "Lendable Ltd",
-      "email": "dev@lendable.co.uk"
+      "email": "dev@lendable.co.uk",
+      "homepage": "https://www.lendable.co.uk"
     }
   ],
   
@@ -24,18 +25,19 @@
   
   "require": {
     "php": "^7.0",
-    "gocardless/enterprise": "dev-master#10c27820a3874fa83d610724b84fb7eae60334a2",
+    "gocardless/enterprise": "^6.0",
     "stof/doctrine-extensions-bundle": "*",
     "symfony/symfony": "^2.8|^3.0|^4.0"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "*",
     "jakub-onderka/php-parallel-lint": "^1.0",
-    "matthiasnoback/symfony-dependency-injection-test": "2.*",
+    "matthiasnoback/symfony-dependency-injection-test": "^4.0",
     "php-coveralls/php-coveralls": "^2.1",
-    "phpstan/phpstan": "^0.10.2",
-    "phpunit/phpunit": "^6.0",
-    "sensiolabs/security-checker": "^4.1",
+    "phpstan/phpstan": "^0.11",
+    "phpstan/phpstan-phpunit": "^0.11",
+    "phpunit/phpunit": "^7.0|^8.0",
+    "sensiolabs/security-checker": "^5.0",
     "symfony/phpunit-bridge": "^2.8|^3.0|^4.0"
   },
 
