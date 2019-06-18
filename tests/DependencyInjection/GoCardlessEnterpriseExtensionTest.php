@@ -18,7 +18,7 @@ class GoCardlessEnterpriseExtensionTest extends AbstractExtensionTestCase
         ];
     }
 
-    protected function getMinimalConfiguration()
+    protected function getMinimalConfiguration(): array
     {
         return [
             'baseUrl' => 'https://api-sandbox.gocardless.com/',
