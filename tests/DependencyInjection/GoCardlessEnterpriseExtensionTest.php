@@ -21,10 +21,12 @@ class GoCardlessEnterpriseExtensionTest extends AbstractExtensionTestCase
     protected function getMinimalConfiguration(): array
     {
         return [
-            'baseUrl' => 'https://api-sandbox.gocardless.com/',
-            'gocardlessVersion' => '2015-07-06',
-            'webhook_secret' => 'BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB',
-            'token' => 'CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC',
+            'gocardless_enterprise' => [
+                'baseUrl' => 'https://api-sandbox.gocardless.com/',
+                'gocardlessVersion' => '2015-07-06',
+                'webhook_secret' => 'BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB',
+                'token' => 'CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC',
+            ],
         ];
     }
 

@@ -17,6 +17,7 @@ class Configuration implements ConfigurationInterface
         }
 
         $rootNode
+            ->arrayPrototype()
             ->children()
             ->scalarNode('baseUrl')->isRequired()->cannotBeEmpty()->end()
             ->scalarNode('gocardlessVersion')->isRequired()->cannotBeEmpty()->end()
