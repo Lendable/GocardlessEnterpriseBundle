@@ -2,6 +2,8 @@
 
 namespace Lendable\GoCardlessEnterpriseBundle\Entity;
 
+use Lendable\GoCardlessEnterpriseBundle\Enum\MandateState;
+
 class Mandate extends \Lendable\GoCardlessEnterprise\Model\Mandate
 {
     /**
@@ -67,6 +69,6 @@ class Mandate extends \Lendable\GoCardlessEnterprise\Model\Mandate
      */
     public function isActive()
     {
-        return !in_array($this->getStatus(), ['failed', 'cancelled']);
+        return in_array($this->getStatus(), MandateState::getActiveStates());
     }
 }
