@@ -43,7 +43,7 @@ before_install:
 
 install:
   - if [ "$(phpenv version-name)" != "$LATEST_PHP_VERSION" ]; then
-      composer remove friendsofphp/php-cs-fixer phpstan/phpstan --dev;
+      composer remove friendsofphp/php-cs-fixer phpstan/phpstan-phpunit phpstan/phpstan --dev;
     fi
   - if [ "$DEPENDENCIES" = "beta" ]; then
       composer config minimum-stability beta;
