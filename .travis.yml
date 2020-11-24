@@ -51,8 +51,8 @@ install:
     elif [ "$DEPENDENCIES" = "low" ]; then
       composer update -n --prefer-dist --prefer-lowest;
     elif [ "$SYMFONY_VERSION" != "" ]; then
-      composer remove symfony/symfony --dev &&
-      composer require symfony/symfony:"${SYMFONY_VERSION}" --dev --no-update;
+      composer remove symfony/symfony &&
+      composer require symfony/symfony:"${SYMFONY_VERSION}" --no-update;
     else
       composer update -n --prefer-dist;
     fi;
